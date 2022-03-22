@@ -35,7 +35,9 @@ public class WeatherAPI {
 
             //go gomb megnyomasa
             final HtmlButton button = page.getHtmlElementById("go");
+            webClient.waitForBackgroundJavaScript(10000);
             button.click();
+            webClient.waitForBackgroundJavaScript(10000);
             button.fireEvent("click");
 
             webClient.waitForBackgroundJavaScript(10000);
