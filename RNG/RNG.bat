@@ -1,1 +1,0 @@
-java -jar out/artifacts/RNG_jar/RNG.jar
