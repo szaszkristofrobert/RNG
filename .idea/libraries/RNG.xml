@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="RNG">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/out/artifacts/RNG_jar/RNG.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

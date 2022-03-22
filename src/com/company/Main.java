@@ -51,6 +51,14 @@ public class Main {
                     break;
             }
         }
+
+        WeatherAPI WAPI = new WeatherAPI();
+        try {
+            WAPI.submittingForm(0, "2000-01");
+        }
+        catch (Exception ex){
+            System.out.println(ex);
+        }
     }
 
     static void writeOutMan(String section){
