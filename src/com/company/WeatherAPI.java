@@ -1,6 +1,7 @@
 package com.company;
 
 
+import com.gargoylesoftware.htmlunit.BrowserVersion;
 import com.gargoylesoftware.htmlunit.WebClient;
 import com.gargoylesoftware.htmlunit.html.*;
 
@@ -10,7 +11,7 @@ public class WeatherAPI {
         java.util.logging.Logger.getLogger("com.gargoylesoftware.htmlunit").setLevel(java.util.logging.Level.OFF);
         java.util.logging.Logger.getLogger("org.apache.http").setLevel(java.util.logging.Level.OFF);
 
-        try (final WebClient webClient = new WebClient())  {
+        try (final WebClient webClient = new WebClient(BrowserVersion.FIREFOX_38))  {
 
             webClient.getOptions().setCssEnabled(true);
             webClient.getOptions().setJavaScriptEnabled(true);
@@ -38,7 +39,7 @@ public class WeatherAPI {
             button.fireEvent("click");
 
             webClient.waitForBackgroundJavaScript(10000);
-            Thread.sleep(10000);//valamier nem var a javascriptre eleget az erre valo fuggveny
+            //Thread.sleep(10000);
 
             final HtmlDivision resultsArea = page.getHtmlElementById("results_area");
 
