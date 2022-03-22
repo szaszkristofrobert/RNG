@@ -1,0 +1,108 @@
+Alteration
+
+“Magic is, by its very nature, volatile and dangerous. Unless you can control it, it can and will destroy you."
+
+Flesh spells have been significantly buffed. Dragonhide now benefits from Mage Armor.
+Shield spells allow the player to choose between Fire, Frost, Shock, or Poison for a short time.
+Utility spells allow the player to open locks, fortify carry weight, and walk on water.
+Several debuffs that were considered to be Destruction spells in previous games (Weakness to Fire, Disintegrate Weapon, Corrode Armor) have been reinterpreted as Alteration spells.
+Mark and Recall spells allow for quick travel around Skyrim.
+
+Spell List
+
+Novice
+
+Oakflesh - Improves armor by 40 points for 60 seconds.
+Open Novice Lock - For 60 seconds, instantly open any Novice lock.
+Candlelight - Creates a hovering light that lasts for 180 seconds.
+Waterbreathing -Allows the caster to breathe underwater for 60 seconds.
+
+Apprentice
+
+Stoneflesh - Improves armor by 80 points for 60 seconds.
+Damage Weapon - Touch enemies in melee range to reduce their weapon damage by 10% for 30 seconds.
+Damage Armor - Touch enemies in melee range to reduce their armor by 100 for 30 seconds.
+Open Apprentice Lock - For 60 seconds, instantly open any Apprentice lock.
+Feather - Increases carry weight by 100 for 60 seconds.
+Windwalker - You move 10% faster for 60 seconds.
+Buoyancy - For 60 seconds, you swim twice as fast.
+Magelight - Launches a hovering ball of light that lasts for 180 seconds.
+Ash Shell - Encases enemies in ash for 15 seconds.*
+
+Adept
+
+Ironflesh - Improves armor by 120 points for 60 seconds.
+Fire Shell - Increases Fire Resistance by 50% for 60 seconds.
+Frost Shell - Increases Frost Resistance by 50% for 60 seconds.
+Shock Shell - Increases Shock Resistance by 50% for 60 seconds.
+Poison Shell - Increases Poison Resistance by 50% for 60 seconds.
+Disintegrate Weapon - A blast of raw magic that reduces enemy weapon damage by 15% for 30 seconds.
+Corrode Armor - A blast of raw magic that reduces enemy armor by 150 for 30 seconds.
+Open Adept Lock - For 60 seconds, instantly open any Adept lock.
+Slowfall - You take no fall damage for 60 seconds.
+Sea Stride - You can walk on water for 60 seconds.
+Telekinesis - Levitates objects, allowing the caster to deal damage by launching them at foes.
+Transmutation - Transmutes one piece of unrefined iron ore into silver ore, and one unrefined piece of silver ore into gold ore.*
+Whirlwind Cloak - For 60 seconds, targets in melee range have a chance to be flung away.*
+Ash Cloud - Creates a rune that explodes when enemies approach, encasing enemies in ash for 15 seconds.*
+
+Expert
+
+Ebonyflesh - Improves armor by 160 points for 60 seconds.
+Weakness to Fire - Reduces enemy Fire Resistance by 50% for 30 seconds.
+Weakness to Frost - Reduces enemy Frost Resistance by 50% for 30 seconds.
+Weakness to Shock - Reduces enemy Shock Resistance by 50% for 30 seconds.
+Weakness to Poison - Reduces enemy Poison Resistance by 50% for 30 seconds.
+Greater Disintegration - A blast of raw magic that reduces enemy weapon damage by 20% for 30 seconds.
+Greater Corrosion - A blast of raw magic that reduces enemy armor by 200 for 30 seconds.
+Disintegration Rune  - Creates a rune that explodes when enemies approach, reducing enemy weapon damage by 25% for 30 seconds.
+Corrosion Rune - Creates a rune that explodes when enemies approach, reducing enemy armor by 250 for 30 seconds.
+Open Expert Lock - For 60 seconds, instantly open any Expert lock.
+Pack Mule - Increases carry weight by 200 for 60 seconds.
+Windrunner - You move 20% faster for 60 seconds.
+Mark - Marks a location for recall.
+Recall - Teleports the caster to their marked location.
+Equilibrium - Sacrifices Health for a moderate amount of Magicka.*
+Shalidor’s Beacon - Teleports the caster to the College of Winterhold.*
+Ash Rune - Creates a rune that explodes when enemies approach, encasing enemies in ash for 15 seconds.*
+
+Master
+
+Dragonhide - Improves armor by 200 points for 60 seconds.
+Flame Shield - Increases Fire Resistance by 75% for 60 seconds.
+Ice Shield - Increases Frost Resistance by 75% for 60 seconds.
+Lightning Shield - Increases Shock Resistance by 75% for 60 seconds.
+Venom Shield - Increases Poison Resistance by 75% for 60 seconds.
+Sword Breaker - An explosion of raw magic that reduces enemy weapon damage by 25% for 30 seconds.
+Armor Eater - An explosion of raw magic that reduces enemy armor by 250 for 30 seconds.
+The Unwelcome Guest - For 60 seconds, instantly open any Master lock.
+Grand Telekinesis - Levitates creatures and people, allowing the caster to launch them for massive damage.
+Cinder Storm - Encases all enemies in a large area in ash for 15 seconds.*
+
+* Spells marked by a * are not available from normal vendors.
+
+
+Conjuration
+
+“You deal with powerful forces. Take care they do not overwhelm you.”
+
+New Conjuration spells allow you to summon ghostly predators, Dremora mages, and skeleton warriors.
+Rare spells hidden in unique places around the world allow Conjuration mages to summon ancestral ghosts, dwarven spiders, and even daedric Lurkers.
+Reanimation spells increase both their magnitude and their duration when dual cast.
+Banish Daedra is now a potent defense against Daedra of all kinds.
+New high-level bound weapons make Conjuration mages deadly in melee combat.
+
+Spell List
+
+Novice
+
+Conjure Spectral Wolf - Summons a Spectral Wolf for 60 seconds wherever the caster is pointing.
+Conjure Skeleton - Summons a Skeleton for 60 seconds wherever the caster is pointing.
+Raise Zombie - Reanimates a corpse up to level 8 for 60 seconds.
+Bound Sword - Conjures a lesser Daedra in the form of a sword for 60 seconds.
+Bound Dagger - Conjures a lesser Daedra in the form of a dagger for 60 seconds.
+
+Apprentice
+
+Conjure Spectral Dire Wolf - Summons a Spectral Alpha Wolf for 60 seconds wherever the caster is pointing.
+Conjure Flame Atronach - Summons a Flame Atronach for 60 seconds wherever the caster is pointing.

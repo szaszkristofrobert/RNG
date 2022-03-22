@@ -1,0 +1,43 @@
+
+Parancsok:
+
+exit - kilepes a programbol
+manunal - manual kiiratasa
+    formatum: manual <parancs>
+    magyarazat:
+        -lehet parancs nelkul is
+text - szovegbol csinal bitsorozatot
+    formatum: text <input file neve> <input szoveg nyelve> <kiertekeles modja> <output file neve>
+    magyarazat:
+        -az input es output fileok .txt kiterjesztesuek
+        -az inputnal es outputnal csak a file neve kell, a .txt nem
+        -az inputnak az inputs mappaban kell lennie
+        -ha az output neve foglalt akkor appendeli az eredmenyt a file eddigi tartalmahoz
+        -angol es magyar karakterkeszletet tud kiertekelni a program
+        -elerheto kiertekelesi modok:
+            "felezes":
+                Az abc elso fele 0, a masodik fele 1.
+            "betueloszlas":
+                Az angol nyelvben a betuket ket csoportra bontottam.
+                Mindket csoportban az elofordulasi valoszinusegek osszege kozel 50%.
+            "hasonlitas":
+                Paronkent osszehasonlitja az input betuit, es ha a par
+                elso tagja hamarabb van az abcben 0, ellenkezo esetben 1.
+                Feleannyi bitet allit elo mint a masik 2 modszer.
+        -elerheto nyelvek:
+            "angol"
+            "magyar"
+
+weather - idojarasadatokbol csinal bitsorozatot
+    formatum: weather <input file neve> <output file neve>
+    magyarazat:
+        -az input es output fileok .txt kiterjesztesuek
+        -az inputnal es outputnal csak a file neve kell, a .txt nem
+        -az inputnak az inputs mappaban kell lennie
+        -ha az output neve foglalt akkor appendeli az eredmenyt a file eddigi tartalmahoz
+        -az idojaras adatokat a kovetkezo formaban varja a program:
+            -a fileban egy sor egy evet jelent
+            -egy sorban 14 szam legyen tabbal elvalasztva; ebbol az elso az evszam, a kovetkezo 12 a
+            megfelelo honapra vonatkozo szamadat, az utolso pedig az egesz evre vonatkozo szamadat
+
+________________________________________________________________________________________
