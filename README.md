@@ -5,3 +5,7 @@ on windows it should run by running the rng.bat file provided you have the corre
 the program can generate pseudo-random bits from various sources
 the usable commands are explained in the manual (it can be accessed with the manual command, and appears on running the program)
 the manual is in hungarian
+
+dependencies:
+  jdk-17
+  htmlunit-2.6 - can be set up with maven
