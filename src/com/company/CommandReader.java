@@ -24,8 +24,8 @@ public class CommandReader {
         //System.out.println(command[0]);
 
         return command;
+
+
     }
-
-
 
 }
