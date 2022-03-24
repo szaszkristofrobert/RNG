@@ -8,4 +8,5 @@ the manual is in hungarian
 
 dependencies:
   jdk-17
+  
   htmlunit-2.20 - can be set up with maven
