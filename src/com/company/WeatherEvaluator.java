@@ -28,6 +28,7 @@ public class WeatherEvaluator {
                         sor[i] = -1;
                     else
                         sor[i] = Float.parseFloat(tempSor[i + 1]);
+
                     if(paratlansor[11] == 0){
                         paratlansor[i] = sor[i];
                     }

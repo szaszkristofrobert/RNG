@@ -11,6 +11,7 @@ public class Main {
         CommandReader cr = new CommandReader();
         TextEvaluator te = new TextEvaluator();
         WeatherEvaluator we = new WeatherEvaluator();
+        WeatherAPI WAPI = new WeatherAPI();
 
         writeOutMan("");
 
@@ -40,25 +41,34 @@ public class Main {
                     te.evaluate(command[1], command[2], command[3], command[4]);
                     break;
                 case "weather":
-                    if (command.length < 3){
+                    if (command.length < 4){
                         System.out.println("Hibas parancs! Helyes hasznalat a manualban");
                         break;
                     }
-                    we.evaluate(command[1], command[2]);
+                    /*we.evaluate(command[1], command[2]);
+                    break;*/
+                    for(int i=0; i<Integer.parseInt(command[3]); i++) {
+                        try {
+                            WAPI.submittingForm(i, command[1], command[2], Integer.parseInt(command[3]));
+                        } catch (Exception ex) {
+                            System.out.println(ex);
+                        }
+                    }
                     break;
+
                 default:
                     System.out.println("Hibas parancs! Helyes hasznalat a manualban");
                     break;
             }
         }
 
-        WeatherAPI WAPI = new WeatherAPI();
-        try {
-            WAPI.submittingForm(0, "2000-01");
+
+        /*try {
+            WAPI.submittingForm(1, "2000-01");
         }
         catch (Exception ex){
             System.out.println(ex);
-        }
+        }*/
     }
 
     static void writeOutMan(String section){
