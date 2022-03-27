@@ -7,5 +7,7 @@ the usable commands are explained in the manual (it can be accessed with the man
 the manual is in hungarian
 
 dependencies:
+  
   jdk-17
+  
   htmlunit-2.20 - can be set up with maven
