@@ -41,19 +41,13 @@ public class Main {
                     te.evaluate(command[1], command[2], command[3], command[4]);
                     break;
                 case "weather":
-                    if (command.length < 4){
+                    if (command.length < 3){
                         System.out.println("Hibas parancs! Helyes hasznalat a manualban");
                         break;
                     }
                     /*we.evaluate(command[1], command[2]);
                     break;*/
-                    for(int i=0; i<Integer.parseInt(command[3]); i++) {
-                        try {
-                            WAPI.submittingForm(i, command[1], command[2], Integer.parseInt(command[3]));
-                        } catch (Exception ex) {
-                            System.out.println(ex);
-                        }
-                    }
+
                     break;
 
                 default:
@@ -68,6 +62,16 @@ public class Main {
         }
         catch (Exception ex){
             System.out.println(ex);
+        }*/
+
+        /*for (int j = 2000; j < 2010; j++) {
+            for (int i = 0; i < 60; i++) {
+                try {
+                    WAPI.submittingForm(i, j+"", "weatherData2000-2010", 60);
+                } catch (Exception ex) {
+                    System.out.println(ex);
+                }
+            }
         }*/
     }
 

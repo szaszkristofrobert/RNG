@@ -17,7 +17,7 @@ public class WeatherAPI {
 
         try (final WebClient webClient = new WebClient(BrowserVersion.FIREFOX_38))  {
 
-            FileWriter myWriter = fm.getWriter(outputname);
+            FileWriter myWriter = fm.getWeatherWriter(outputname);
             webClient.getOptions().setCssEnabled(true);
             webClient.getOptions().setJavaScriptEnabled(true);
             webClient.getOptions().setThrowExceptionOnScriptError(false);
@@ -43,7 +43,7 @@ public class WeatherAPI {
             for(int i = 0; i < 12; i++) {
                 dateInput.setValueAttribute(year+months[i]);
                 float percentage = 100*(((float) stateIndex)*12 + ((float)i+1))/(stateNum*12);
-                System.out.println(year+months[i] + "\t" + option.getValueAttribute() + "\t" + percentage + "%");
+
 
                 //go gomb megnyomasa
                 final HtmlButton button = page.getHtmlElementById("go");
@@ -55,10 +55,6 @@ public class WeatherAPI {
 
                 final HtmlDivision resultsArea = page.getHtmlElementById("results_area");
 
-                float elso = 0;
-                float masodik;
-                String p;
-                float pnum;
                 int iter = 0;
                 while (resultsArea.getChildNodes().get(0) == null || resultsArea.getChildNodes().get(0).getClass() == com.gargoylesoftware.htmlunit.html.HtmlDivision.class){
                     if (iter>20){
@@ -73,34 +69,13 @@ public class WeatherAPI {
                 HtmlTableRow row;
                 for (int j = 2; j < resultsTable.getRowCount(); j++){
                     row = resultsTable.getRow(j);
-                    /*for (final HtmlTableCell cell : row.getCells()) {
-                        System.out.println("   Found cell: " + cell.asText());
-                    }*/
-
-                //for (final HtmlTableRow row : resultsTable.getRows()) {
-                    p = row.getCell(7).asText();
-                    if (p.equals("M") || p.equals("T") || p.equals("-") || p.equals("") || p.equals("S"))
-                        pnum = -1;
-                    else
-                        pnum = Float.parseFloat(row.getCell(7).asText());
-
-
-                    if (elso == 0)
-                        elso = pnum;
-                    else {
-                        masodik = pnum;
-                        if (elso > masodik)
-                            myWriter.write("1");
-                        if (masodik > elso)
-                            myWriter.write("0");
-
-                        elso = 0;
+                    for (final HtmlTableCell cell : row.getCells()) {
+                        myWriter.write("\t" + cell.asText());
                     }
-                /*System.out.println("Found row");
-                for (final HtmlTableCell cell : row.getCells()) {
-                    System.out.println("   Found cell: " + cell.asText());
-                }*/
+                    myWriter.write("\n");
+
                 }
+                System.out.println(year+months[i] + "\t" + option.getValueAttribute() + "\t" + percentage + "%");
             }
             myWriter.close();
         }

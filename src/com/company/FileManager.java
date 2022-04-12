@@ -38,4 +38,16 @@ public class FileManager {
         }
         return new FileWriter(myObj, true);
     }
+
+    public FileWriter getWeatherWriter(String outputname)throws IOException{
+        //output file letrehozasa
+        File myObj = new File(System.getProperty("user.dir") + "/res/" + outputname +".txt");
+        if (myObj.createNewFile()) {
+            System.out.println("File created: " + myObj.getName());
+        } else {
+            System.out.println("File already exists.");
+            //return;
+        }
+        return new FileWriter(myObj, true);
+    }
 }
