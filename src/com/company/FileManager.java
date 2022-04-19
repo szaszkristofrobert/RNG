@@ -15,6 +15,11 @@ public class FileManager {
         return new BufferedReader(new FileReader(file));
     }
 
+    public BufferedReader getWeatherReader(String inputname)throws IOException{
+        File file = new File(System.getProperty("user.dir") + "/res/" + inputname + ".txt");
+        return new BufferedReader(new FileReader(file));
+    }
+
     public FileWriter getWriter(String outputname) throws IOException{
         //output file letrehozasa
         File myObj = new File(System.getProperty("user.dir") + "/outputs/" + outputname + ".txt");

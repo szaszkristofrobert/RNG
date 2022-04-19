@@ -29,15 +29,11 @@ text - szovegbol csinal bitsorozatot
             "magyar"
 
 weather - idojarasadatokbol csinal bitsorozatot
-    formatum: weather <input file neve> <output file neve>
+    formatum: weather <input file neve> <output file neve> <atlagot vagy normal ertekkel komparalunk (bool igaz ha atlaggal hamis ha normallal)> <melyik szamadat>
     magyarazat:
         -az input es output fileok .txt kiterjesztesuek
         -az inputnal es outputnal csak a file neve kell, a .txt nem
-        -az inputnak az inputs mappaban kell lennie
+        -az inputnak az res mappaban kell lennie
         -ha az output neve foglalt akkor appendeli az eredmenyt a file eddigi tartalmahoz
-        -az idojaras adatokat a kovetkezo formaban varja a program:
-            -a fileban egy sor egy evet jelent
-            -egy sorban 14 szam legyen tabbal elvalasztva; ebbol az elso az evszam, a kovetkezo 12 a
-            megfelelo honapra vonatkozo szamadat, az utolso pedig az egesz evre vonatkozo szamadat
 
 ________________________________________________________________________________________

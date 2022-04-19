@@ -41,14 +41,14 @@ public class Main {
                     te.evaluate(command[1], command[2], command[3], command[4]);
                     break;
                 case "weather":
-                    if (command.length < 3){
+                    if (command.length < 5){
                         System.out.println("Hibas parancs! Helyes hasznalat a manualban");
                         break;
                     }
-                    /*we.evaluate(command[1], command[2]);
-                    break;*/
-
+                    we.evaluate(command[1], command[2], Boolean.parseBoolean(command[3]), Integer.parseInt(command[4]));
                     break;
+
+                    //break;
 
                 default:
                     System.out.println("Hibas parancs! Helyes hasznalat a manualban");
