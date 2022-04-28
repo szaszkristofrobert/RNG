@@ -33,6 +33,23 @@ public class Main {
                     else
                         writeOutMan("");
                     break;
+                case "download":
+                    if (command.length < 3){
+                        System.out.println("Hibas parancs! Helyes hasznalat a manualban");
+                        break;
+                    }
+                    int from = Integer.parseInt(command[1]);
+                    int till = Integer.parseInt(command[2]);
+                    for (int j = from; j < till; j++) {
+                        for (int i = 0; i < 60; i++) {
+                            try {
+                                WAPI.submittingForm(i, j+"", "weatherData" + from + "-" + (till-1), 60);
+                            } catch (Exception ex) {
+                                System.out.println(ex);
+                            }
+                        }
+                    }
+                    break;
                 case "text":
                     if (command.length < 5){
                         System.out.println("Hibas parancs! Helyes hasznalat a manualban");
@@ -62,16 +79,6 @@ public class Main {
         }
         catch (Exception ex){
             System.out.println(ex);
-        }*/
-
-        /*for (int j = 2000; j < 2010; j++) {
-            for (int i = 0; i < 60; i++) {
-                try {
-                    WAPI.submittingForm(i, j+"", "weatherData2000-2010", 60);
-                } catch (Exception ex) {
-                    System.out.println(ex);
-                }
-            }
         }*/
     }
 
