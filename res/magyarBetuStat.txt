@@ -42,4 +42,4 @@ x = 3521
 y = 21641
 z = 301022
 zs = 7544
-osszes betu: 18325914
+osszes betu: 14022901

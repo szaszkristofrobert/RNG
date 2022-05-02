@@ -5,10 +5,11 @@ import java.util.Locale;
 
 public class TextEvaluator {
     String elsobetu = "";
-    int betunum=0; int a=0, aa=0, b=0, c=0, cs=0, d=0, dz=0, dzs=0, e=0, ee=0, f=0, g=0, gy=0, h=0, i=0, ii=0, j=0, k=0, l=0, ly=0, m=0, n=0, ny=0, o=0, oo=0, ooo=0, oooo=0, p=0, q=0, r=0, s=0, sz=0, t=0, ty=0, u=0, uu=0, uuu=0, uuuu=0, v=0, w=0, x=0, y=0, z=0, zs=0;
+    int bit0=0; int bit1=0; int betunum=0; int a=0, aa=0, b=0, c=0, cs=0, d=0, dz=0, dzs=0, e=0, ee=0, f=0, g=0, gy=0, h=0, i=0, ii=0, j=0, k=0, l=0, ly=0, m=0, n=0, ny=0, o=0, oo=0, ooo=0, oooo=0, p=0, q=0, r=0, s=0, sz=0, t=0, ty=0, u=0, uu=0, uuu=0, uuuu=0, v=0, w=0, x=0, y=0, z=0, zs=0;
     FileManager fm = new FileManager();
 
     void evaluate(String inputname, String language, String method, String outputname) {
+        bit0=0; bit1=0;
         try {
             FileInputStream fis = fm.getFis(inputname);
 
@@ -73,12 +74,13 @@ public class TextEvaluator {
             }
 
             if (language.equals("magyar")) {
-                int bit = 0;
+                int bit = -1;
                 int[] byteBuffer = new int[3];
                 byteBuffer[1] = fis.read();
                 byteBuffer[2] = fis.read();
                 int bufferCountdown = 2;
                 while ((oneByte = fis.read()) != -1 || bufferCountdown-- > 0) {
+                    bit = -1;
                     byteBuffer[0] = byteBuffer[1];
                     byteBuffer[1] = byteBuffer[2];
                     byteBuffer[2] = oneByte;
@@ -212,10 +214,14 @@ public class TextEvaluator {
                     else{
                         bit = magyarevaluate(String.valueOf((char)byteBuffer[0]).toLowerCase(), method);
                     }
-                    if (bit == 0)
+                    if (bit == 0) {
                         myWriter.write("0");
-                    if (bit == 1)
+                        bit0++;
+                    }
+                    if (bit == 1) {
                         myWriter.write("1");
+                        bit1++;
+                    }
                 }
             }
 
@@ -224,148 +230,156 @@ public class TextEvaluator {
             myWriter.close();
             myOtherWriter.close();
             System.out.flush();
-            System.out.println("Text evaluated!");
+            System.out.println("Text evaluated!    0: " + bit0 + "    1: " + bit1);
         } catch (IOException ex) {
             System.out.println(ex);
         }
     }
+
     int magyarevaluate(String betu, String modszer){
         //System.out.println(betu);
         int ret = -1;
         if (modszer.equals("setup")) {
-            betunum++;
             switch (betu) {
                 case "a":
                     a++;
+                    betunum++;
                     break;
                 case "á":
                     aa++;
+                    betunum++;
                     break;
                 case "b":
                     b++;
+                    betunum++;
                     break;
                 case "c":
                     c++;
+                    betunum++;
                     break;
                 case "cs":
                     cs++;
+                    betunum++;
                     break;
                 case "d":
                     d++;
+                    betunum++;
                     break;
                 case "dz":
                     dz++;
+                    betunum++;
                     break;
                 case "dzs":
                     dzs++;
+                    betunum++;
                     break;
                 case "e":
-                    e++;
+                    e++;betunum++;
                     break;
                 case "é":
-                    ee++;
+                    ee++;betunum++;
                     break;
                 case "f":
-                    f++;
+                    f++;betunum++;
                     break;
                 case "g":
-                    g++;
+                    g++;betunum++;
                     break;
                 case "gy":
-                    gy++;
+                    gy++;betunum++;
                     break;
                 case "h":
-                    h++;
+                    h++;betunum++;
                     break;
                 case "i":
-                    i++;
+                    i++;betunum++;
                     break;
                 case "í":
-                    ii++;
+                    ii++;betunum++;
                     break;
                 case "j":
-                    j++;
+                    j++;betunum++;
                     break;
                 case "k":
-                    k++;
+                    k++;betunum++;
                     break;
                 case "l":
-                    l++;
+                    l++;betunum++;
                     break;
                 case "ly":
-                    ly++;
+                    ly++;betunum++;
                     break;
                 case "m":
-                    m++;
+                    m++;betunum++;
                     break;
                 case "n":
-                    n++;
+                    n++;betunum++;
                     break;
                 case "ny":
-                    ny++;
+                    ny++;betunum++;
                     break;
                 case "o":
-                    o++;
+                    o++;betunum++;
                     break;
                 case "ó":
-                    oo++;
+                    oo++;betunum++;
                     break;
                 case "ö":
-                    ooo++;
+                    ooo++;betunum++;
                     break;
                 case "ő":
-                    oooo++;
+                    oooo++;betunum++;
                     break;
                 case "p":
-                    p++;
+                    p++;betunum++;
                     break;
                 case "q":
-                    q++;
+                    q++;betunum++;
                     break;
                 case "r":
-                    r++;
+                    r++;betunum++;
                     break;
                 case "s":
-                    s++;
+                    s++;betunum++;
                     break;
                 case "sz":
-                    sz++;
+                    sz++;betunum++;
                     break;
                 case "t":
-                    t++;
+                    t++;betunum++;
                     break;
                 case "ty":
-                    ty++;
+                    ty++;betunum++;
                     break;
                 case "u":
-                    u++;
+                    u++;betunum++;
                     break;
                 case "ú":
-                    uu++;
+                    uu++;betunum++;
                     break;
                 case "ü":
-                    uuu++;
+                    uuu++;betunum++;
                     break;
                 case "ű":
-                    uuuu++;
+                    uuuu++;betunum++;
                     break;
                 case "v":
-                    v++;
+                    v++;betunum++;
                     break;
                 case "w":
-                    w++;
+                    w++;betunum++;
                     break;
                 case "x":
-                    x++;
+                    x++;betunum++;
                     break;
                 case "y":
-                    y++;
+                    y++;betunum++;
                     break;
                 case "z":
-                    z++;
+                    z++;betunum++;
                     break;
                 case "zs":
-                    zs++;
+                    zs++;betunum++;
                     break;
             }
         }
@@ -377,8 +391,8 @@ public class TextEvaluator {
         }
         if (modszer.equals("betueloszlas")){
             switch (betu){
-                case "a", "á", "b", "c", "cs", "d", "e", "é", "f", "g", "gy", "h", "i", "í", "j", "k", "l", "ly", "m", "r", "ü", "y", "zs", "q": ret = 0; break;
-                case "dz", "dzs", "n", "ny", "o", "ó", "ö", "ő", "p", "s", "sz", "t", "ty", "u", "ú", "ű", "v", "w", "x", "z": ret = 1; break;
+                case "a", "á", "b", "c", "cs", "e", "é", "g", "i", "j", "k", "o", "ó", "ö", "ő", "q", "ű", "w", "zs": ret = 0; break;
+                case "d", "dz", "dzs", "f", "gy", "h", "í", "l", "ly", "m", "n", "ny", "p", "r", "s", "sz", "t", "ty", "u", "ú", "ü", "v", "x", "y", "z": ret = 1; break;
             }
         }
         if (modszer.equals("hasonlitas")){
