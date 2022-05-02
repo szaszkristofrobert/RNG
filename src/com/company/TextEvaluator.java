@@ -377,8 +377,8 @@ public class TextEvaluator {
         }
         if (modszer.equals("betueloszlas")){
             switch (betu){
-                case "a", "á", "b", "e", "t", "é", "k", "i", "p", "ü", "y", "zs", "dzs": ret = 0; break;
-                case "í", "j", "l", "ly", "m", "n", "h", "gy", "g", "f", "dz", "d", "cs", "c", "ny", "o", "ó", "ö", "ő", "q", "r", "s", "sz", "ty", "u", "ú", "ű", "v", "w", "x", "z": ret = 1; break;
+                case "a", "á", "b", "c", "cs", "d", "e", "é", "f", "g", "gy", "h", "i", "í", "j", "k", "l", "ly", "m", "r", "ü", "y", "zs", "q": ret = 0; break;
+                case "dz", "dzs", "n", "ny", "o", "ó", "ö", "ő", "p", "s", "sz", "t", "ty", "u", "ú", "ű", "v", "w", "x", "z": ret = 1; break;
             }
         }
         if (modszer.equals("hasonlitas")){
