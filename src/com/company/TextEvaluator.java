@@ -5,7 +5,7 @@ import java.util.Locale;
 
 public class TextEvaluator {
     String elsobetu = "";
-    int a=0, aa=0, b=0, c=0, cs=0, d=0, dz=0, dzs=0, e=0, ee=0, f=0, g=0, gy=0, h=0, i=0, ii=0, j=0, k=0, l=0, ly=0, m=0, n=0, ny=0, o=0, oo=0, ooo=0, oooo=0, p=0, q=0, r=0, s=0, sz=0, t=0, ty=0, u=0, uu=0, uuu=0, uuuu=0, v=0, w=0, x=0, y=0, z=0, zs=0;
+    int betunum=0; int a=0, aa=0, b=0, c=0, cs=0, d=0, dz=0, dzs=0, e=0, ee=0, f=0, g=0, gy=0, h=0, i=0, ii=0, j=0, k=0, l=0, ly=0, m=0, n=0, ny=0, o=0, oo=0, ooo=0, oooo=0, p=0, q=0, r=0, s=0, sz=0, t=0, ty=0, u=0, uu=0, uuu=0, uuuu=0, v=0, w=0, x=0, y=0, z=0, zs=0;
     FileManager fm = new FileManager();
 
     void evaluate(String inputname, String language, String method, String outputname) {
@@ -233,6 +233,7 @@ public class TextEvaluator {
         //System.out.println(betu);
         int ret = -1;
         if (modszer.equals("setup")) {
+            betunum++;
             switch (betu) {
                 case "a":
                     a++;
@@ -536,6 +537,7 @@ public class TextEvaluator {
         myWriter.write("y = " + y + "\n");
         myWriter.write("z = " + z + "\n");
         myWriter.write("zs = " + zs + "\n");
+        myWriter.write("osszes betu: " + betunum + "\n");
         System.out.println("Stats done.");
     }
 }
