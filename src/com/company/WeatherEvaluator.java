@@ -1,11 +1,13 @@
 package com.company;
 
+import com.gargoylesoftware.htmlunit.javascript.host.Console;
 import org.eclipse.jetty.util.IO;
 
 import java.awt.image.AreaAveragingScaleFilter;
 import java.io.BufferedReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.LinkedList;
 
 public class WeatherEvaluator {
     FileManager fm = new FileManager();
@@ -15,68 +17,32 @@ public class WeatherEvaluator {
             BufferedReader br = fm.getWeatherReader(inputname);
             FileWriter myWriter = fm.getWriter(outputname);
 
-            //float[] sor = new float[12];
-
-            //float[] paratlansor = {0,0,0, 0,0,0, 0,0,0, 0,0,0};
-
-            float[] dayValues = resetDayValues();
-            //int[] results = new int[40];
-
-            String[] tempSor;
+            LinkedList<java.lang.Float> dayValues = resetDayValues();
 
             String line;
-            int i=0;
+            String[] splitLine;
+
+            //int nap=0;
             while ((line = br.readLine())!= null) {
 
-                tempSor = line.split("\t");
+                splitLine= line.split("\t");
 
                 try {
-                    if (i > 40){
-                        dayValues = resetDayValues();
-                        i = 0;
+                    if(splitLine.length <= oszlop){
+                        //System.out.println("Empty line");
                     }
-                    if (tempSor.length == 0){
-                        i++;
-                    }
-                    else if ((tempSor[1].equals("Average") && averageTrue) || (tempSor[1].equals("Normal") && !averageTrue)) {
-                        float elvalaszto = Float.parseFloat(tempSor[oszlop]);
+                    else if ((splitLine[1].equals("Average") && averageTrue) || (splitLine[1].equals("Normal") && !averageTrue)) {
+                        float elvalaszto = Float.parseFloat(splitLine[oszlop]);
                         writeBits(elvalaszto, dayValues, myWriter);
                         dayValues = resetDayValues();
-                        i = 0;
                     }
-                    else if(!tempSor[1].equals("Average") && !tempSor[1].equals("Normal") && !tempSor[1].equals("Sum")){
-                        i++;
-                        dayValues[i-1] = Float.parseFloat(tempSor[oszlop]);
-
+                    else if(!splitLine[1].equals("Average") && !splitLine[1].equals("Normal") && !splitLine[1].equals("Sum") && !splitLine[1].equals("")){
+                        dayValues.add(Float.parseFloat(splitLine[oszlop]));
                     }
                 }
                 catch(NumberFormatException ex) {
-                    System.out.println("NaN: " + tempSor[oszlop]);
-
+                    //System.out.println("NaN: " + splitLine[oszlop]);
                 }
-
-
-
-                /*for (int i = 0; i < 12; i++) {
-                    if (tempSor[i+1].equals("M"))
-                        sor[i] = -1;
-                    else
-                        sor[i] = Float.parseFloat(tempSor[i + 1]);
-
-                    if(paratlansor[11] == 0){
-                        paratlansor[i] = sor[i];
-                    }
-                    else{
-                        if (paratlansor[i] == -1 || sor[i] == -1);
-                        else if(paratlansor[i] < sor[i])
-                            myWriter.write("1");
-                        else if(paratlansor[i] > sor[i])
-                            myWriter.write("0");
-
-                        paratlansor[i] = 0;
-                    }
-                }*/
-
             }
 
 
@@ -88,26 +54,23 @@ public class WeatherEvaluator {
         }
     }
 
-    void writeBits(float elvalaszto, float[] dayValues, FileWriter myWriter) throws IOException {
-        int[] results = new int[31];
-        for (int i = 0; i < 31; i++){
-            if (dayValues[i] == -1);
-                //results[i] = -1;
-            else if (dayValues[i] < elvalaszto)
+    void writeBits(float elvalaszto, LinkedList<java.lang.Float> dayValues, FileWriter myWriter) throws IOException {
+        float value;
+        while(dayValues.size() > 0){
+            value = dayValues.pop();
+            if (elvalaszto > value)
                 myWriter.write("0");
-            else if (dayValues[i] > elvalaszto)
+            if (elvalaszto < value)
                 myWriter.write("1");
-            else;
-                //results[i] = -1;
         }
-        //return results;
     }
 
-    float[] resetDayValues (){
-        float[] dayValues = new float[40];
+    LinkedList<java.lang.Float> resetDayValues (){
+        return new LinkedList<java.lang.Float>();
+        /*float[] dayValues = new float[40];
         for (int i = 0; i < 31; i++){
             dayValues[i] = -1;
         }
-        return dayValues;
+        return dayValues;*/
     }
 }
