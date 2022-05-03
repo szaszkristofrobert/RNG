@@ -15,12 +15,12 @@ public class WeatherEvaluator {
             BufferedReader br = fm.getWeatherReader(inputname);
             FileWriter myWriter = fm.getWriter(outputname);
 
-            float[] sor = new float[12];
+            //float[] sor = new float[12];
 
-            float[] paratlansor = {0,0,0, 0,0,0, 0,0,0, 0,0,0};
+            //float[] paratlansor = {0,0,0, 0,0,0, 0,0,0, 0,0,0};
 
             float[] dayValues = resetDayValues();
-            int[] results = new int[40];
+            //int[] results = new int[40];
 
             String[] tempSor;
 
