@@ -36,4 +36,11 @@ weather - idojarasadatokbol csinal bitsorozatot
         -az inputnak az res mappaban kell lennie
         -ha az output neve foglalt akkor appendeli az eredmenyt a file eddigi tartalmahoz
 
+download - idojarasadatokat tolt le
+    formatum: download <elso letolteno ev> <elso mar nem letoltendo ev>
+    magyarazat:
+        -a letoltott fileok a res mappaba kerulnek
+        -a letoltott fileokat magatol nevezi el a leoltott evek alapjan
+        -sokaig fut
+
 ________________________________________________________________________________________
