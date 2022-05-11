@@ -64,10 +64,14 @@ public class TextEvaluator {
                     while ((oneByte = fis.read()) != -1) {
                         int elso = oneByte;
                         if ((oneByte = fis.read()) != -1) {
-                            if (oneByte > elso)
-                                myWriter.write("0");
-                            if (oneByte < elso)
-                                myWriter.write("1");
+                            if (betue(oneByte) && betue(elso)) {
+
+
+                                if (oneByte > elso)
+                                    myWriter.write("0");
+                                if (oneByte < elso)
+                                    myWriter.write("1");
+                            }
                         }
                     }
                 }
@@ -553,5 +557,14 @@ public class TextEvaluator {
         myWriter.write("zs = " + zs + "\n");
         myWriter.write("osszes betu: " + betunum + "\n");
         System.out.println("Stats done.");
+    }
+
+    boolean betue(int character){
+        if (character >= 65 && character <= 90)
+            return true;
+        if (character >= 97 && character <= 122)
+            return true;
+        else
+            return false;
     }
 }
